@@ -3,6 +3,8 @@ use bevy::prelude::*;
 #[derive(Component)]
 struct Player;
 
+#[der]
+
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
