@@ -15,10 +15,12 @@ fn spawn_camera_system(mut commands: Commands) {
 }
 
 fn spawn_player_system(mut commands: Commands, asset_server: Res<AssetServer>) {
-    let mut player_image: Handle<Texture> = asset_server.load("playersprite.png");
-
-    commands.spawn(SpriteBundle {
-        transform: Transform::from_xyz(100., 0., 0.),
-        ..default()
-    });
+    commands.spawn((
+        Player,
+        SpriteBundle {
+            transform: Transform::from_xyz(100., 0., 0.),
+            texture: asset_server.load("playersprite.png"),
+            ..default()
+        },
+    ));
 }
